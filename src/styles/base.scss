@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+// コンポーネント用のカスタムクラス
+@layer components {
+  .theme-card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded transition-colors;
+    
+    &--primary {
+      @apply bg-blue-500 text-white hover:bg-blue-600;
+    }
+    
+    &--secondary {
+      @apply bg-gray-500 text-white hover:bg-gray-600;
+    }
+  }
+
+  .input-area {
+    @apply w-full min-h-[200px] p-4 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+}
