@@ -61,7 +61,18 @@ onMounted(loadTheme);
 
 <template>
   <div class="min-h-screen bg-gray-100 p-4">
+    <div v-if="!isLoaded" class="debug-loading">
+    Loading... (Debug message)
+  </div>
+
+  <div v-else class="min-h-screen bg-gray-100 p-4">
+    <!-- デバッグ用のメッセージを追加 -->
+    <div class="bg-yellow-100 p-4 mb-4 rounded">
+      Debug: Application Loaded Successfully
+    </div>
+  </div>
     <div class="max-w-6xl mx-auto">
+      
       <!-- ヘッダー -->
       <header class="mb-8">
         <h1 class="text-3xl font-bold text-center text-gray-800">AI vs Human</h1>
@@ -166,4 +177,5 @@ onMounted(loadTheme);
     @apply bg-blue-500 text-white hover:bg-blue-600 disabled:bg-blue-300;
   }
 }
+
 </style>

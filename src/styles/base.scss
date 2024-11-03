@@ -1,14 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwindの基本スタイル */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-body {
-  background-color: $background-color;
-  color: $text-color;
-  font-family: system-ui, -apple-system, sans-serif;
+/* カスタムスタイル */
+@layer base {
+  body {
+    @apply bg-gray-100;
+  }
 }
 
-// コンポーネント用のカスタムクラス
 @layer components {
   .theme-card {
     @apply bg-white rounded-lg shadow-md p-6;
